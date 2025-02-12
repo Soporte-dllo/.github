@@ -1,0 +1,19 @@
+name: GitHub Metrics
+
+on:
+  workflow_dispatch: # Permite ejecutar el workflow manualmente
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: GitHub Metrics Action
+        uses: jh3y/github-metrics@v1
+        with:
+          user: "Soporte-dllo" # Nombre de tu organización
+          metrics: "stars,contributors,commits"
+          layout: "compact"
+          hide_border: "true"
